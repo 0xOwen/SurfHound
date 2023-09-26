@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-09-18T15:36:12.145Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="iGBdm5M_XvG8bKsG6yCx" version="21.7.5" type="github">
+<mxfile host="app.diagrams.net" modified="2023-09-26T11:20:25.988Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36" etag="TzvXy-Agm34neENzkvS4" version="21.8.2" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
-    <mxGraphModel dx="1034" dy="426" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1034" dy="424" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
@@ -28,7 +28,7 @@
         <mxCell id="oeUNZ9Hqf4qacebzjF0V-4" value="Feature Extraction" style="rounded=1;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="330" y="260" width="140" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="mgL1GLhbOSRt3THgbgNb-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="oeUNZ9Hqf4qacebzjF0V-5" target="oeUNZ9Hqf4qacebzjF0V-6">
+        <mxCell id="mgL1GLhbOSRt3THgbgNb-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="oeUNZ9Hqf4qacebzjF0V-5" target="oeUNZ9Hqf4qacebzjF0V-6" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="oeUNZ9Hqf4qacebzjF0V-5" value="Classification algorithm (ANN using tensorflow and keras layers)" style="rounded=1;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
@@ -119,20 +119,21 @@
         <mxCell id="waFIuq2YiBh5JCGNJt-d-7" value="Phishing URL &lt;br&gt;detected according &lt;br&gt;to results from &lt;br&gt;model?" style="rhombus;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="580" y="880" width="150" height="140" as="geometry" />
         </mxCell>
-        <mxCell id="waFIuq2YiBh5JCGNJt-d-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="waFIuq2YiBh5JCGNJt-d-8" target="waFIuq2YiBh5JCGNJt-d-10" edge="1">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="waFIuq2YiBh5JCGNJt-d-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="waFIuq2YiBh5JCGNJt-d-8" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="430" y="1090" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
         <mxCell id="waFIuq2YiBh5JCGNJt-d-8" value="Browser extension generates alert warning user of phishing URL" style="rounded=1;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="370" y="920" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="waFIuq2YiBh5JCGNJt-d-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="waFIuq2YiBh5JCGNJt-d-9" target="waFIuq2YiBh5JCGNJt-d-10" edge="1">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="waFIuq2YiBh5JCGNJt-d-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="waFIuq2YiBh5JCGNJt-d-9" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="475" y="1110" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
         <mxCell id="waFIuq2YiBh5JCGNJt-d-9" value="Browser extension generates alert informing user that the URL is legitimate" style="rounded=1;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="595" y="1080" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="waFIuq2YiBh5JCGNJt-d-10" value="Exit" style="ellipse;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="385" y="1090" width="90" height="40" as="geometry" />
         </mxCell>
         <mxCell id="waFIuq2YiBh5JCGNJt-d-19" value="use" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="510" y="700" width="40" height="30" as="geometry" />
@@ -154,6 +155,9 @@
         </mxCell>
         <mxCell id="waFIuq2YiBh5JCGNJt-d-25" value="Testing dataset" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="610" y="352.5" width="90" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="cWmUDGixMgaAYCk0Nt9i-0" value="Return to idle state" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="354" y="1090" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
