@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-10-11T09:53:16.311Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="1k7aGKD7o_dkCKjL4jzr" version="22.0.4" type="github">
+<mxfile host="app.diagrams.net" modified="2023-10-11T09:54:23.687Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="g5bk8_xuEfv8FIi3bwGN" version="22.0.4" type="github">
   <diagram name="Page-1" id="dTiTi1cHi8UYDldYwwr2">
     <mxGraphModel dx="794" dy="477" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -52,7 +52,7 @@
             <mxPoint x="260" y="370" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="1Rg0l-Jrpl31mSPe2XpB-28" value="&lt;b&gt;PHISHING DETECTION SYSTEM USING MACHINE LEARNING FOR REAL-TIME URL ANALYSIS&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+        <mxCell id="1Rg0l-Jrpl31mSPe2XpB-28" value="&lt;b&gt;Phishing Detection System Using Machine Learning for Real-Time URL Analysis&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="245" y="40" width="340" height="30" as="geometry" />
         </mxCell>
         <mxCell id="ZNa4QDexEPgOs0PgkhyP-3" value="" style="endArrow=classic;html=1;rounded=0;dashed=1;entryX=1;entryY=0;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="1Rg0l-Jrpl31mSPe2XpB-17" target="1Rg0l-Jrpl31mSPe2XpB-16">
