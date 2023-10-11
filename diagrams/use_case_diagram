@@ -1,68 +1,84 @@
-<mxfile host="app.diagrams.net" modified="2023-09-18T07:29:50.470Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36" etag="pcZ9NcFbsQooGUPjHpUW" version="21.7.4" type="github">
+<mxfile host="app.diagrams.net" modified="2023-10-11T09:53:16.311Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="1k7aGKD7o_dkCKjL4jzr" version="22.0.4" type="github">
   <diagram name="Page-1" id="dTiTi1cHi8UYDldYwwr2">
-    <mxGraphModel dx="791" dy="426" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="794" dy="477" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="1Rg0l-Jrpl31mSPe2XpB-1" value="Admin" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+        <mxCell id="1Rg0l-Jrpl31mSPe2XpB-1" value="Admin" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
           <mxGeometry x="100" y="360" width="50" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="1Rg0l-Jrpl31mSPe2XpB-6" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="235" y="40" width="360" height="550" as="geometry" />
+        <mxCell id="1Rg0l-Jrpl31mSPe2XpB-6" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="235" y="40" width="360" height="690" as="geometry" />
         </mxCell>
-        <mxCell id="1Rg0l-Jrpl31mSPe2XpB-7" value="Install Browser Extension on Google Chrome browsers" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="1Rg0l-Jrpl31mSPe2XpB-7" value="Install Browser Extension on Google Chrome browsers" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="320" y="100" width="180" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="1Rg0l-Jrpl31mSPe2XpB-8" value="View a dashboard of phishing statistics where the phishing detection system is in use." style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="305" y="450" width="235" height="90" as="geometry" />
+        <mxCell id="1Rg0l-Jrpl31mSPe2XpB-8" value="View a dashboard of phishing statistics where the phishing detection system is in use." style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="250" y="530" width="235" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="1Rg0l-Jrpl31mSPe2XpB-15" value="Enter URLs on browsers" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="1Rg0l-Jrpl31mSPe2XpB-15" value="Enter URLs on browsers" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="330" y="210" width="170" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="1Rg0l-Jrpl31mSPe2XpB-16" value="Classification of URL as phishing/ legitimate" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="680" y="200" width="210" height="90" as="geometry" />
+        <mxCell id="1Rg0l-Jrpl31mSPe2XpB-16" value="ANN Classifies URL as phishing/ legitimate" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="375" y="440" width="210" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="1Rg0l-Jrpl31mSPe2XpB-17" value="Get alert on phishing / legitimate URLs" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="1Rg0l-Jrpl31mSPe2XpB-17" value="Get alert on phishing / legitimate URLs" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="330" y="320" width="170" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="1Rg0l-Jrpl31mSPe2XpB-18" value="User" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+        <mxCell id="1Rg0l-Jrpl31mSPe2XpB-18" value="User" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
           <mxGeometry x="100" y="95" width="50" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="1Rg0l-Jrpl31mSPe2XpB-22" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="1Rg0l-Jrpl31mSPe2XpB-18" target="1Rg0l-Jrpl31mSPe2XpB-7">
+        <mxCell id="1Rg0l-Jrpl31mSPe2XpB-22" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="1Rg0l-Jrpl31mSPe2XpB-18" target="1Rg0l-Jrpl31mSPe2XpB-7" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="180" y="160" as="sourcePoint" />
             <mxPoint x="230" y="110" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="1Rg0l-Jrpl31mSPe2XpB-23" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="1Rg0l-Jrpl31mSPe2XpB-18" target="1Rg0l-Jrpl31mSPe2XpB-15">
+        <mxCell id="1Rg0l-Jrpl31mSPe2XpB-23" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="1Rg0l-Jrpl31mSPe2XpB-18" target="1Rg0l-Jrpl31mSPe2XpB-15" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="135" y="150" as="sourcePoint" />
             <mxPoint x="330" y="150" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="1Rg0l-Jrpl31mSPe2XpB-24" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="1Rg0l-Jrpl31mSPe2XpB-18" target="1Rg0l-Jrpl31mSPe2XpB-17">
+        <mxCell id="1Rg0l-Jrpl31mSPe2XpB-24" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="1Rg0l-Jrpl31mSPe2XpB-18" target="1Rg0l-Jrpl31mSPe2XpB-17" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="145" y="160" as="sourcePoint" />
             <mxPoint x="340" y="160" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="1Rg0l-Jrpl31mSPe2XpB-25" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="1Rg0l-Jrpl31mSPe2XpB-1" target="1Rg0l-Jrpl31mSPe2XpB-8">
+        <mxCell id="1Rg0l-Jrpl31mSPe2XpB-25" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="1Rg0l-Jrpl31mSPe2XpB-1" target="1Rg0l-Jrpl31mSPe2XpB-8" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="210" y="420" as="sourcePoint" />
             <mxPoint x="260" y="370" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="1Rg0l-Jrpl31mSPe2XpB-28" value="&lt;b&gt;PHISHING DETECTION SYSTEM USING MACHINE LEARNING FOR REAL-TIME URL ANALYSIS&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="1Rg0l-Jrpl31mSPe2XpB-28" value="&lt;b&gt;PHISHING DETECTION SYSTEM USING MACHINE LEARNING FOR REAL-TIME URL ANALYSIS&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="245" y="40" width="340" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="1Rg0l-Jrpl31mSPe2XpB-30" value="" style="endArrow=classic;html=1;rounded=0;dashed=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="1Rg0l-Jrpl31mSPe2XpB-16" target="1Rg0l-Jrpl31mSPe2XpB-17">
+        <mxCell id="ZNa4QDexEPgOs0PgkhyP-3" value="" style="endArrow=classic;html=1;rounded=0;dashed=1;entryX=1;entryY=0;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="1Rg0l-Jrpl31mSPe2XpB-17" target="1Rg0l-Jrpl31mSPe2XpB-16">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="730" y="440" as="sourcePoint" />
-            <mxPoint x="780" y="390" as="targetPoint" />
+            <mxPoint x="330" y="470" as="sourcePoint" />
+            <mxPoint x="380" y="420" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="1Rg0l-Jrpl31mSPe2XpB-36" value="interaction with &lt;br&gt;ANN model" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="600" y="320" width="100" height="40" as="geometry" />
+        <mxCell id="ZNa4QDexEPgOs0PgkhyP-4" value="&amp;lt;&amp;lt;includes&amp;gt;&amp;gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="ZNa4QDexEPgOs0PgkhyP-3">
+          <mxGeometry x="-0.1031" y="-3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZNa4QDexEPgOs0PgkhyP-5" value="Administrator login" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="375" y="640" width="175" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ZNa4QDexEPgOs0PgkhyP-7" value="" style="endArrow=classic;html=1;rounded=0;dashed=1;entryX=1;entryY=0;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="1Rg0l-Jrpl31mSPe2XpB-8" target="ZNa4QDexEPgOs0PgkhyP-5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="500" y="640" as="sourcePoint" />
+            <mxPoint x="550" y="590" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZNa4QDexEPgOs0PgkhyP-8" value="&amp;lt;&amp;lt;includes&amp;gt;&amp;gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="ZNa4QDexEPgOs0PgkhyP-7">
+          <mxGeometry x="-0.1723" y="-1" relative="1" as="geometry">
+            <mxPoint y="12" as="offset" />
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
