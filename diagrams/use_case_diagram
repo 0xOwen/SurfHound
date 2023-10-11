@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-10-11T09:54:23.687Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="g5bk8_xuEfv8FIi3bwGN" version="22.0.4" type="github">
+<mxfile host="app.diagrams.net" modified="2023-10-11T09:55:35.748Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="shXE0hV7FiAhQSj-JbvV" version="22.0.4" type="github">
   <diagram name="Page-1" id="dTiTi1cHi8UYDldYwwr2">
     <mxGraphModel dx="794" dy="477" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -13,7 +13,7 @@
         <mxCell id="1Rg0l-Jrpl31mSPe2XpB-7" value="Install Browser Extension on Google Chrome browsers" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="320" y="100" width="180" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="1Rg0l-Jrpl31mSPe2XpB-8" value="View a dashboard of phishing statistics where the phishing detection system is in use." style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="1Rg0l-Jrpl31mSPe2XpB-8" value="View a dashboard of phishing statistics from where the system is deployed" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="250" y="530" width="235" height="90" as="geometry" />
         </mxCell>
         <mxCell id="1Rg0l-Jrpl31mSPe2XpB-15" value="Enter URLs on browsers" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
