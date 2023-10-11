@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-09-26T11:20:25.988Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36" etag="TzvXy-Agm34neENzkvS4" version="21.8.2" type="github">
+<mxfile host="app.diagrams.net" modified="2023-10-11T09:46:37.473Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="UCZYdv8_MihViRUt_URa" version="22.0.4" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
-    <mxGraphModel dx="1034" dy="424" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1034" dy="477" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
@@ -66,21 +66,22 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="oeUNZ9Hqf4qacebzjF0V-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="oeUNZ9Hqf4qacebzjF0V-26" edge="1">
+        <mxCell id="oeUNZ9Hqf4qacebzjF0V-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="oeUNZ9Hqf4qacebzjF0V-26" edge="1" target="oeUNZ9Hqf4qacebzjF0V-4">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="230" y="610" as="targetPoint" />
+            <mxPoint x="190" y="300" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="50" y="610" />
+              <mxPoint x="50" y="280" />
+            </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="waFIuq2YiBh5JCGNJt-d-0" value="no" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="oeUNZ9Hqf4qacebzjF0V-30" vertex="1" connectable="0">
-          <mxGeometry x="-0.0203" relative="1" as="geometry">
+        <mxCell id="ocQelnKd8fHfEBoT8KNA-1" value="no" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="oeUNZ9Hqf4qacebzjF0V-30">
+          <mxGeometry x="-0.9288" y="1" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="oeUNZ9Hqf4qacebzjF0V-26" value="Accept model accuracy?" style="rhombus;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="320" y="560" width="160" height="100" as="geometry" />
-        </mxCell>
-        <mxCell id="oeUNZ9Hqf4qacebzjF0V-33" value="Go back to previous stages to finetune parameters" style="rounded=1;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="110" y="580" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="waFIuq2YiBh5JCGNJt-d-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="waFIuq2YiBh5JCGNJt-d-3" target="waFIuq2YiBh5JCGNJt-d-5" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -88,52 +89,17 @@
         <mxCell id="waFIuq2YiBh5JCGNJt-d-3" value="Save phishing detection model&amp;nbsp;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="310" y="690" width="170" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="waFIuq2YiBh5JCGNJt-d-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="waFIuq2YiBh5JCGNJt-d-5" target="waFIuq2YiBh5JCGNJt-d-6" edge="1">
+        <mxCell id="ocQelnKd8fHfEBoT8KNA-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="waFIuq2YiBh5JCGNJt-d-5" target="ocQelnKd8fHfEBoT8KNA-3">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="waFIuq2YiBh5JCGNJt-d-5" value="Evaluate URL received from browser extension" style="rounded=1;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="590" y="695" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="waFIuq2YiBh5JCGNJt-d-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="waFIuq2YiBh5JCGNJt-d-6" target="waFIuq2YiBh5JCGNJt-d-7" edge="1">
+        <mxCell id="ocQelnKd8fHfEBoT8KNA-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="waFIuq2YiBh5JCGNJt-d-6" target="ocQelnKd8fHfEBoT8KNA-2">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="waFIuq2YiBh5JCGNJt-d-6" value="Forward URL classification to browser extension" style="rounded=1;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="590" y="790" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="waFIuq2YiBh5JCGNJt-d-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="waFIuq2YiBh5JCGNJt-d-7" target="waFIuq2YiBh5JCGNJt-d-8" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="waFIuq2YiBh5JCGNJt-d-14" value="yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="waFIuq2YiBh5JCGNJt-d-11" vertex="1" connectable="0">
-          <mxGeometry x="-0.0667" y="1" relative="1" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="waFIuq2YiBh5JCGNJt-d-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="waFIuq2YiBh5JCGNJt-d-7" target="waFIuq2YiBh5JCGNJt-d-9" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="waFIuq2YiBh5JCGNJt-d-13" value="no" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="waFIuq2YiBh5JCGNJt-d-12" vertex="1" connectable="0">
-          <mxGeometry x="-0.1" y="1" relative="1" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="waFIuq2YiBh5JCGNJt-d-7" value="Phishing URL &lt;br&gt;detected according &lt;br&gt;to results from &lt;br&gt;model?" style="rhombus;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="580" y="880" width="150" height="140" as="geometry" />
-        </mxCell>
-        <mxCell id="waFIuq2YiBh5JCGNJt-d-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="waFIuq2YiBh5JCGNJt-d-8" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="430" y="1090" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="waFIuq2YiBh5JCGNJt-d-8" value="Browser extension generates alert warning user of phishing URL" style="rounded=1;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="370" y="920" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="waFIuq2YiBh5JCGNJt-d-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="waFIuq2YiBh5JCGNJt-d-9" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="475" y="1110" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="waFIuq2YiBh5JCGNJt-d-9" value="Browser extension generates alert informing user that the URL is legitimate" style="rounded=1;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="595" y="1080" width="120" height="60" as="geometry" />
+          <mxGeometry x="354" y="810" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="waFIuq2YiBh5JCGNJt-d-19" value="use" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="510" y="700" width="40" height="30" as="geometry" />
@@ -156,8 +122,22 @@
         <mxCell id="waFIuq2YiBh5JCGNJt-d-25" value="Testing dataset" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="610" y="352.5" width="90" height="25" as="geometry" />
         </mxCell>
-        <mxCell id="cWmUDGixMgaAYCk0Nt9i-0" value="Return to idle state" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="354" y="1090" width="120" height="60" as="geometry" />
+        <mxCell id="cWmUDGixMgaAYCk0Nt9i-0" value="Return to idle state" style="rounded=1;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="595" y="910" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ocQelnKd8fHfEBoT8KNA-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="ocQelnKd8fHfEBoT8KNA-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="590" y="940" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ocQelnKd8fHfEBoT8KNA-2" value="Generate alert to inform user whether URL is phishing or not" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="354" y="910" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ocQelnKd8fHfEBoT8KNA-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="ocQelnKd8fHfEBoT8KNA-3" target="waFIuq2YiBh5JCGNJt-d-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ocQelnKd8fHfEBoT8KNA-3" value="Save evaluation results in database" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="590" y="810" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
