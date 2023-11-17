@@ -1,5 +1,4 @@
 from flask import Flask, request, jsonify
-from flask_cors import CORS
 import pickle
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
@@ -12,7 +11,6 @@ import re
 
 
 app = Flask(__name__)
-CORS(app)  # Allow cross-origin requests
 
 @app.route('/check_phishing', methods=['POST'])
 def check_phishing():
