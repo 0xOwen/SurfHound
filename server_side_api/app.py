@@ -27,6 +27,7 @@ def is_phishing_url(url):
     # Preprocess the URL
     df = pd.DataFrame([[url, None ]], columns=['url','label'])
     X = preprocessor.transform(df)
+    print(df)
     
     # make a prediction
     prediction = model.predict(X)
