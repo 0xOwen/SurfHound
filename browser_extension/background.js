@@ -12,24 +12,27 @@ function detectPhishing(url) {
     .then(response => response.json())
     .then(data => {
         console.log('Message from server: ', data);
-        // If the URL contains 'phishing', display the warning popup
-        if (url.includes(data.is_phishing)) {
-            chrome.windows.create({
-                type: 'popup',
-                url: chrome.runtime.getURL('warning.html'),
-                width: 400,
-                height: 200,
-                focused: true
-            });
-        } else {
-            // If the URL does not contain 'phishing', display the safe popup
-            chrome.windows.create({
-                type: 'popup',
-                url: chrome.runtime.getURL('safe.html'),
-                width: 400,
-                height: 200,
-                focused: true
-            });
+
+        if (data.message !== 'Ignored URL'){
+              // If the URL contains 'phishing', display the warning popup
+                if (url.includes(data.is_phishing)) {
+                    chrome.windows.create({
+                        type: 'popup',
+                        url: chrome.runtime.getURL('warning.html'),
+                        width: 400,
+                        height: 200,
+                        focused: true
+                    });
+                } else {
+                    // If the URL does not contain 'phishing', display the safe popup
+                    chrome.windows.create({
+                        type: 'popup',
+                        url: chrome.runtime.getURL('safe.html'),
+                        width: 400,
+                        height: 200,
+                        focused: true
+                    });
+        }
         }
     })
     .catch(error => console.error('Error:', error));
