@@ -1,4 +1,6 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, abort
+from flask_login import login_user, logout_user, login_required, current_user
+from flask_login import login_user, logout_user, login_required, current_user
 import pickle
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
@@ -10,9 +12,7 @@ import tldextract
 import re
 import os
 from database import db, URLStat, User, Admin
-from werkzeug.security import generate_password_hash
-from flask_login import login_user
-
+from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
@@ -47,18 +47,41 @@ def register():
     # Log the user in
     login_user(user)
 
-    return jsonify({'message': 'Registered and logged in successfully'}), 200
+    return jsonify({'message': 'Registered and logged in successfully', 'user_id': user.id}), 200
+
+@app.route('/login', methods=['POST'])
+def login():
+    data = request.get_json()
+    username = data.get('username')
+    password = data.get('password')
+
+    # Check if the user exists
+    user = User.query.filter_by(username=username).first()
+    if not user:
+        abort(400, 'User does not exist')
+
+    # Check if the password is correct
+    if not check_password_hash(user.password, password):
+        abort(400, 'Wrong password')
+
+    # Log the user in
+    login_user(user)
+
+    return jsonify({'message': 'Logged in successfully', 'user_id': user.id}), 200
 
 @app.route('/check_phishing', methods=['POST'])
 def check_phishing():
     data = request.get_json()
     url = data.get('url')
+    user_id = data.get('user_id')  # Get the user_id from the request
+
     # Ignore URLs that start with 'chrome://', 'about:', 'file:', 'data:', or 'javascript:'
     if url.startswith(('chrome://', 'about:', 'file:', 'data:', 'javascript:')):
         return jsonify({'message': 'Ignored URL'}), 200
     is_phishing = is_phishing_url(url)
+
     # save the URL and its classification to the database
-    url_stat = URLStat(url=url, is_phishing=lambda x: 1 if is_phishing else 0)
+    url_stat = URLStat(url=url, is_phishing=lambda x: 1 if is_phishing else 0, user_id=user_id)  # Include the user_id
     db.session.add(url_stat)
     db.session.commit()
 
