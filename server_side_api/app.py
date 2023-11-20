@@ -81,7 +81,7 @@ def check_phishing():
     is_phishing = is_phishing_url(url)
 
     # save the URL and its classification to the database
-    url_stat = URLStat(url=url, is_phishing=lambda x: 1 if is_phishing else 0, user_id=user_id)  # Include the user_id
+    url_stat = URLStat(url=url, is_phishing=1 if is_phishing else 0, user_id=user_id)  # Include the user_id
     db.session.add(url_stat)
     db.session.commit()
 

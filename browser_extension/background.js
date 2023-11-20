@@ -9,7 +9,7 @@ function detectPhishing(url) {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ url: url, user_id: result.user_id }),
+            body: JSON.stringify({ url: url, user_id: result.user_id || null }),
         })
         .then(response => response.json())
         .then(data => {
@@ -17,7 +17,7 @@ function detectPhishing(url) {
 
             if (data.message !== 'Ignored URL'){
                 // If the URL contains 'phishing', display the warning popup
-                if (url.includes(data.is_phishing)) {
+                if (data.is_phishing) {
                     chrome.windows.create({
                         type: 'popup',
                         url: chrome.runtime.getURL('warning.html'),

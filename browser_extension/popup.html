@@ -4,55 +4,66 @@
     <title>Phishing Checker</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
             background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 300px;  
+        height: 400px; 
         }
         form {
-            margin-bottom: 1em;
-            background-color: #fff;
-            padding: 1em;
-            border-radius: 5px;
-            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
         }
-        input, button {
-            margin-top: 0.5em;
-            padding: 0.5em;
-            border: 1px solid #ddd;
-            border-radius: 5px;
+        input[type="text"], input[type="password"] {
             width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            border-radius: 4px;
         }
         button {
-            background-color: #007BFF;
-            color: #fff;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
             cursor: pointer;
+            width: 100%;
+            border-radius: 4px;
+            font-size: 16px;
         }
         button:hover {
-            background-color: #0056b3;
+            opacity: 0.8;
+        }
+        #notLoggedIn, #loggedIn {
+            max-width: 300px;
+            margin: auto;
         }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div id="notLoggedIn">
-        <input type="radio" id="loginToggle" name="authToggle" checked>
-        <label for="loginToggle">Login</label>
-        <input type="radio" id="registerToggle" name="authToggle">
-        <label for="registerToggle">Register</label>
+        <form id="loginForm">
+            <input type="text" id="loginUsername" placeholder="Username">
+            <input type="password" id="loginPassword" placeholder="Password">
+            <button type="submit">Log in</button>
+        </form>
 
-        <div id="login">
-            <form id="loginForm">
-                <input type="text" id="username" placeholder="Username">
-                <input type="password" id="password" placeholder="Password">
-                <button type="submit">Login</button>
-            </form>
-        </div>
-
-        <div id="register" style="display: none;">
-            <form id="registerForm">
-                <input type="text" id="registerUsername" placeholder="Username">
-                <input type="password" id="registerPassword" placeholder="Password">
-                <button type="submit">Register</button>
-            </form>
-        </div>
+        <form id="registerForm">
+            <input type="text" id="registerUsername" placeholder="Username">
+            <input type="password" id="registerPassword" placeholder="Password">
+            <button type="submit">Register</button>
+        </form>
     </div>
 
     <div id="loggedIn" style="display: none;">
@@ -60,109 +71,9 @@
             <input type="text" id="url" placeholder="URL">
             <button type="submit">Check URL</button>
         </form>
-        <!-- Add your visuals here -->
+        <p id="urlCheckResult"></p>
     </div>
 
-    <script>
-        document.getElementById('loginToggle').addEventListener('change', function() {
-            document.getElementById('login').style.display = 'block';
-            document.getElementById('register').style.display = 'none';
-        });
-
-        document.getElementById('registerToggle').addEventListener('change', function() {
-            document.getElementById('login').style.display = 'none';
-            document.getElementById('register').style.display = 'block';
-        });
-
-        document.getElementById('loginForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            var username = document.getElementById('username').value;
-            var password = document.getElementById('password').value;
-
-            // Form validation
-            var usernameRegex = /^[a-zA-Z0-9]{3,}$/; // Alphanumeric string of at least 3 characters
-            var passwordRegex = /^.{6,}$/; // Any string of at least 6 characters
-
-            if (!usernameRegex.test(username) || !passwordRegex.test(password)) {
-                alert('Username must be at least 3 characters and password must be at least 6 characters.');
-                return;
-            }
-
-            fetch('http://localhost:5000/login', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({username: username, password: password}),
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.message === 'Logged in successfully') {
-                    // The user was logged in successfully
-                    // Store the user_id in chrome.storage
-                    chrome.storage.sync.set({user_id: data.user_id}, function() {
-                        console.log('User ID is set to ' + data.user_id);
-                    });
-
-                    // Redirect them to the main content
-                    document.getElementById('notLoggedIn').style.display = 'none';
-                    document.getElementById('loggedIn').style.display = 'block';
-                } else {
-                    // There was an error logging in the user
-                    // Display an error message
-                    alert(data.message);
-                }
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-            });
-        });
-
-        document.getElementById('registerForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            var username = document.getElementById('registerUsername').value;
-            var password = document.getElementById('registerPassword').value;
-
-            // Form validation
-            var usernameRegex = /^[a-zA-Z0-9]{3,}$/; // Alphanumeric string of at least 3 characters
-            var passwordRegex = /^.{6,}$/; // Any string of at least 6 characters
-
-            if (!usernameRegex.test(username) || !passwordRegex.test(password)) {
-                alert('Username must be at least 3 characters and password must be at least 6 characters.');
-                return;
-            }
-
-            fetch('http://localhost:5000/register', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({username: username, password: password}),
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.message === 'Registered and logged in successfully') {
-                    // The user was registered and logged in successfully
-                    // Store the user_id in chrome.storage
-                    chrome.storage.sync.set({user_id: data.user_id}, function() {
-                        console.log('User ID is set to ' + data.user_id);
-                    });
-
-                    // Redirect them to the main content
-                    document.getElementById('notLoggedIn').style.display = 'none';
-                    document.getElementById('loggedIn').style.display = 'block';
-                } else {
-                    // There was an error registering the user
-                    // Display an error message
-                    alert(data.message);
-                }
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-            });
-        });
-    </script>
+    <script src="popup.js"></script>       
 </body>
 </html>
