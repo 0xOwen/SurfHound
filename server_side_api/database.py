@@ -12,6 +12,7 @@ class User(db.Model):
     id = Column(Integer, primary_key=True)
     username = Column(String)
     _password = Column(String, name='password')
+    is_active = Column(Integer, default=1)
 
     @property
     def password(self):

@@ -1,6 +1,4 @@
-from flask import Flask, request, jsonify, abort
-from flask_login import login_user, logout_user, login_required, current_user
-from flask_login import login_user, logout_user, login_required, current_user
+from flask import Flask, request, jsonify, abort, session
 import pickle
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
@@ -16,6 +14,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
+app.secret_key = 'foobar'
 db.init_app(app)
 
 with app.app_context():
@@ -44,8 +43,8 @@ def register():
     # Commit the session to save the changes
     db.session.commit()
 
-    # Log the user in
-    login_user(user)
+    # log user in
+    session['user_id'] = user.id
 
     return jsonify({'message': 'Registered and logged in successfully', 'user_id': user.id}), 200
 
@@ -64,10 +63,16 @@ def login():
     if not check_password_hash(user.password, password):
         abort(400, 'Wrong password')
 
-    # Log the user in
-    login_user(user)
-
+    # log user in
+    session['user_id'] = user.id
     return jsonify({'message': 'Logged in successfully', 'user_id': user.id}), 200
+
+@app.route('/logout', methods=['POST'])
+def logout():
+    # Log the user out
+    session.pop('user_id', None)
+
+    return jsonify({'message': 'Logged out successfully'}), 200
 
 @app.route('/check_phishing', methods=['POST'])
 def check_phishing():
