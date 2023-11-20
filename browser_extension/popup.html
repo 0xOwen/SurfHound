@@ -11,9 +11,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            width: 300px;  
-        height: 400px; 
+            width: 360px;  
+            height: 500px; 
         }
         form {
             background: #fff;
@@ -30,48 +29,58 @@
             box-sizing: border-box;
             border-radius: 4px;
         }
-        button {
-            background-color: #4CAF50;
+        /* Button styles */
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            font-size: 14px;
+            font-family: 'Roboto', sans-serif;
+            background-color: #2196F3;
             color: white;
-            padding: 14px 20px;
-            margin: 8px 0;
             border: none;
-            cursor: pointer;
-            width: 100%;
             border-radius: 4px;
-            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
         }
-        button:hover {
+
+        .button:hover {
+            background-color: #187bcd;
             opacity: 0.8;
         }
         #notLoggedIn, #loggedIn {
             max-width: 300px;
             margin: auto;
         }
+        
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="notLoggedIn">
-        <form id="loginForm">
-            <input type="text" id="loginUsername" placeholder="Username">
-            <input type="password" id="loginPassword" placeholder="Password">
-            <button type="submit">Log in</button>
-        </form>
+    <div style="display: flex; flex-direction: column; align-items: center;">
+        <div id="notLoggedIn">
+            <form id="loginForm">
+                <input type="text" id="loginUsername" placeholder="Username">
+                <input type="password" id="loginPassword" placeholder="Password">
+                <button type="submit">Log in</button>
+            </form>
 
-        <form id="registerForm">
-            <input type="text" id="registerUsername" placeholder="Username">
-            <input type="password" id="registerPassword" placeholder="Password">
-            <button type="submit">Register</button>
-        </form>
-    </div>
+            <form id="registerForm" style="display: none;">
+                <input type="text" id="registerUsername" placeholder="Username">
+                <input type="password" id="registerPassword" placeholder="Password">
+                <button type="submit">Register</button>
+            </form>
+            <button class="button" id="primary-button">Sign In</button>
+            <button class="button" id="secondary-button">Not registered? Register</button>
+        </div>
 
-    <div id="loggedIn" style="display: none;">
-        <form id="urlForm">
-            <input type="text" id="url" placeholder="URL">
-            <button type="submit">Check URL</button>
-        </form>
-        <p id="urlCheckResult"></p>
+        <div id="loggedIn" style="display: none;">
+            <form id="urlForm">
+                <input type="text" id="url" placeholder="URL">
+                <button type="submit">Check URL</button>
+            </form>
+            <p id="urlCheckResult"></p>
+        </div>
     </div>
 
     <script src="popup.js"></script>       
