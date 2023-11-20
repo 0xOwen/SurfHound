@@ -11,7 +11,6 @@ class User(db.Model):
 
     id = Column(Integer, primary_key=True)
     username = Column(String)
-    email = Column(String)
     _password = Column(String, name='password')
 
     @property

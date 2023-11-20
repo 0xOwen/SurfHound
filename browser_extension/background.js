@@ -2,19 +2,21 @@
 
 // Function to send URLs to your Flask API
 function detectPhishing(url) {
-    fetch('http://localhost:5000/check_phishing', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ url: url }),
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log('Message from server: ', data);
+    // Get the user_id from storage
+    chrome.storage.sync.get(['user_id'], function(result) {
+        fetch('http://localhost:5000/check_phishing', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ url: url, user_id: result.user_id }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Message from server: ', data);
 
-        if (data.message !== 'Ignored URL'){
-              // If the URL contains 'phishing', display the warning popup
+            if (data.message !== 'Ignored URL'){
+                // If the URL contains 'phishing', display the warning popup
                 if (url.includes(data.is_phishing)) {
                     chrome.windows.create({
                         type: 'popup',
@@ -32,10 +34,11 @@ function detectPhishing(url) {
                         height: 200,
                         focused: true
                     });
-        }
-        }
-    })
-    .catch(error => console.error('Error:', error));
+                }
+            }
+        })
+        .catch(error => console.error('Error:', error));
+    });
 }
 
 // Listen for clicks on the browser action button
@@ -44,7 +47,6 @@ chrome.action.onClicked.addListener((tab) => {
     detectPhishing(tab.url);
 });
 
-// Listen for tab updates
 // Listen for tab updates
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
     // If the updated tab is a popup, return early
