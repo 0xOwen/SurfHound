@@ -10,7 +10,8 @@ import tldextract
 import re
 import os
 from database import db, URLStat, User, Admin
-from werkzeug.security import generate_password_hash``
+from werkzeug.security import generate_password_hash
+from flask_login import login_user
 
 
 app = Flask(__name__)
@@ -26,6 +27,11 @@ def register():
     username = data.get('username')
     password = data.get('password')
 
+    # Check if the username already exists
+    existing_user = User.query.filter_by(username=username).first()
+    if existing_user:
+        return jsonify({'message': 'Username already exists'}), 400
+
     # Hash the password for security
     hashed_password = generate_password_hash(password)
 
@@ -38,7 +44,11 @@ def register():
     # Commit the session to save the changes
     db.session.commit()
 
-    return jsonify({'message': 'Registered successfully'}), 200
+    # Log the user in
+    login_user(user)
+
+    return jsonify({'message': 'Registered and logged in successfully'}), 200
+
 @app.route('/check_phishing', methods=['POST'])
 def check_phishing():
     data = request.get_json()

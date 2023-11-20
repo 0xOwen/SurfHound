@@ -1,19 +1,118 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Phishing Detection Result</title>
+    <title>Phishing Checker</title>
     <style>
         body {
-            width: 300px;
-            height: 200px;
-            padding: 10px;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        form {
+            margin-bottom: 1em;
+            background-color: #fff;
+            padding: 1em;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+        input, button {
+            margin-top: 0.5em;
+            padding: 0.5em;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 100%;
+        }
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
 <body>
-    <h1 id="title">Phishing Detection Result</h1>
-    <p id="result">Loading...</p>
+    <div id="notLoggedIn">
+        <input type="radio" id="loginToggle" name="authToggle" checked>
+        <label for="loginToggle">Login</label>
+        <input type="radio" id="registerToggle" name="authToggle">
+        <label for="registerToggle">Register</label>
 
-    <script src="popup.js"></script>
+        <div id="login">
+            <form id="loginForm">
+                <input type="text" id="username" placeholder="Username">
+                <input type="password" id="password" placeholder="Password">
+                <button type="submit">Login</button>
+            </form>
+        </div>
+
+        <div id="register" style="display: none;">
+            <form id="registerForm">
+                <input type="text" id="registerUsername" placeholder="Username">
+                <input type="password" id="registerPassword" placeholder="Password">
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="loggedIn" style="display: none;">
+        <form id="urlForm">
+            <input type="text" id="url" placeholder="URL">
+            <button type="submit">Check URL</button>
+        </form>
+        <!-- Add your visuals here -->
+    </div>
+
+    <script>
+        document.getElementById('loginToggle').addEventListener('change', function() {
+            document.getElementById('login').style.display = 'block';
+            document.getElementById('register').style.display = 'none';
+        });
+
+        document.getElementById('registerToggle').addEventListener('change', function() {
+            document.getElementById('login').style.display = 'none';
+            document.getElementById('register').style.display = 'block';
+        });
+
+        document.getElementById('registerForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            var username = document.getElementById('registerUsername').value;
+            var password = document.getElementById('registerPassword').value;
+
+            // Form validation
+            var usernameRegex = /^[a-zA-Z0-9]{3,}$/; // Alphanumeric string of at least 3 characters
+            var passwordRegex = /^.{6,}$/; // Any string of at least 6 characters
+
+            if (!usernameRegex.test(username) || !passwordRegex.test(password)) {
+                alert('Username must be at least 3 characters and password must be at least 6 characters.');
+                return;
+            }
+
+            fetch('http://localhost:5000/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({username: username, password: password}),
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.message === 'Registered and logged in successfully') {
+                    // The user was registered and logged in successfully
+                    // Redirect them to the main content
+                    document.getElementById('notLoggedIn').style.display = 'none';
+                    document.getElementById('loggedIn').style.display = 'block';
+                } else {
+                    // There was an error registering the user
+                    // Display an error message
+                    alert(data.message);
+                }
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
 </body>
 </html>
