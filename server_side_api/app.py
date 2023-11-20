@@ -64,6 +64,8 @@ def check_phishing():
 
     return jsonify({'url': url, 'is_phishing': is_phishing})
 
+
+
 def is_phishing_url(url):
     with open('preprocessor.pkl', 'rb') as f:
         preprocessor = pickle.load(f)
