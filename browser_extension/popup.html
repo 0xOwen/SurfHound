@@ -19,6 +19,7 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
         }
         input[type="text"], input[type="password"] {
             width: 100%;
@@ -62,13 +63,13 @@
             <form id="loginForm">
                 <input type="text" id="loginUsername" placeholder="Username">
                 <input type="password" id="loginPassword" placeholder="Password">
-                <button type="submit">Log in</button>
+                <button class="button" type="submit">Log in</button>
             </form>
 
             <form id="registerForm" style="display: none;">
                 <input type="text" id="registerUsername" placeholder="Username">
                 <input type="password" id="registerPassword" placeholder="Password">
-                <button type="submit">Register</button>
+                <button class="button" type="submit">Register</button>
             </form>
             <button class="button" id="primary-button">Sign In</button>
             <button class="button" id="secondary-button">Not registered? Register</button>
@@ -77,7 +78,7 @@
         <div id="loggedIn" style="display: none;">
             <form id="urlForm">
                 <input type="text" id="url" placeholder="URL">
-                <button type="submit">Check URL</button>
+                <button class="button" type="submit">Check URL</button>
             </form>
             <p id="urlCheckResult"></p>
         </div>
