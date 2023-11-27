@@ -1,7 +1,7 @@
 import tensorflow as tf
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
-from sklearn.preprocessing import StandardScaler, OneHotEncoder
+from sklearn.preprocessing import StandardScaler
 import numpy as np
 import pandas as pd
 import tldextract
@@ -13,26 +13,23 @@ class Preprocessor:
     def __init__(self):
         self.tokenizer = Tokenizer()
         self.scaler = StandardScaler()
-        self.one_hot_encoder = OneHotEncoder(handle_unknown='ignore')
         self.sequences_len = None
 
     def fit(self, df):
         urls = df['url']
-        tlds = urls.apply(lambda x: tldextract.extract(x).suffix)
 
         # Tokenizing the URLs
+        print("Tokenizing the URLs...")
         self.tokenizer.fit_on_texts(urls)
         sequences = self.tokenizer.texts_to_sequences(urls)
         self.sequences_len = max([len(seq) for seq in sequences]) # measure the maximum number of pad sequences
         sequences = pad_sequences(sequences, maxlen=self.sequences_len) # set the maximum length
-        print(f'length of sequences: {len(sequences[0])}')
-
         # Extract features
+        print("Extracting features...")
         features = self.extract_features(df)
 
-        # one-hot encode TLDs
-        tlds = self.one_hot_encoder.fit_transform(np.array(tlds).reshape(-1, 1)).toarray()
-        all_data = np.concatenate([sequences, features, tlds], axis=1)
+        print("concatenating all features")
+        all_data = np.concatenate([sequences, features], axis=1)
         
         # Scale the data
         self.scaler.fit(all_data)
@@ -41,17 +38,17 @@ class Preprocessor:
     def transform(self, df):
         urls = df['url']
         tlds = urls.apply(lambda x: tldextract.extract(x).suffix)
-
         # Tokenizing the URLs
+        print("Tokenizing the URLs...")
         sequences = self.tokenizer.texts_to_sequences(urls)
         sequences = pad_sequences(sequences, maxlen=self.sequences_len) # set the maximum length
         
         # Extract features
+        print("Extracting features...")
         features = self.extract_features(df)
 
-        # one-hot encode TLDs
-        tlds = self.one_hot_encoder.transform(np.array(tlds).reshape(-1, 1)).toarray()
-        all_data = np.concatenate([sequences, features, tlds], axis=1)
+        print("concatenating all features")
+        all_data = np.concatenate([sequences, features], axis=1)
 
         # Scale the data
         return self.scaler.transform(all_data)

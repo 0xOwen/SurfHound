@@ -4,7 +4,7 @@
 function detectPhishing(url) {
     // Get the user_id from storage
     chrome.storage.sync.get(['user_id'], function(result) {
-        fetch('http://localhost:5000/check_phishing', {
+        fetch('http://localhost:5000/api/check_url', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
