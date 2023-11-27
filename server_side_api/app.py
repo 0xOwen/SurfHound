@@ -9,6 +9,7 @@ from collections import Counter
 from operator import itemgetter
 from urllib.parse import urlparse
 import re
+import random
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
@@ -153,7 +154,13 @@ def convert_to_chartjs_format(data):
     word_counts = Counter(words)
     word_data = word_counts.most_common(100)  # Get the 100 most common words
 
-     return url_type_data, ip_data, time_data, url_data, hour_data, tld_data, length_data, word_data
+    return url_type_data, ip_data, time_data, url_data, hour_data, tld_data, length_data, word_data
+
+def generate_random_color():
+    r = random.randint(0, 255)
+    g = random.randint(0, 255)
+    b = random.randint(0, 255)
+    return f'rgb({r},{g},{b})'
 
 
 if __name__ == "__main__":
