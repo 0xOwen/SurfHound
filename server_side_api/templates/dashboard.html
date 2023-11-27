@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wordcloud2.js/1.10.1/wordcloud2.min.js"></script>
+</head>
+<body>
+    <h1>Dashboard</h1>
+
+    <canvas id="urlTypeChart"></canvas>
+    <canvas id="ipChart"></canvas>
+    <canvas id="timeChart"></canvas>
+    <canvas id="urlChart"></canvas>
+    <canvas id="hourChart"></canvas>
+    <canvas id="tldChart"></canvas>
+    <canvas id="lengthChart"></canvas>
+    <div id="wordCloud"></div>
+
+    <script>
+    var urlTypeData = {{ data[0]|tojson }};
+    var ipData = {{ data[1]|tojson }};
+    var timeData = {{ data[2]|tojson }};
+    var urlData = {{ data[3]|tojson }};
+    var hourData = {{ data[4]|tojson }};
+    var tldData = {{ data[5]|tojson }};
+    var lengthData = {{ data[6]|tojson }};
+    var wordData = {{ data[7]|tojson }};
+
+    new Chart(document.getElementById('urlTypeChart'), {
+        type: 'bar',
+        data: urlTypeData,
+        options: { /* ... */ }
+    });
+
+    new Chart(document.getElementById('ipChart'), {
+        type: 'pie',
+        data: ipData,
+        options: { /* ... */ }
+    });
+
+    new Chart(document.getElementById('timeChart'), {
+        type: 'line',
+        data: timeData,
+        options: { /* ... */ }
+    });
+
+    new Chart(document.getElementById('urlChart'), {
+        type: 'bar',
+        data: urlData,
+        options: { /* ... */ }
+    });
+
+    new Chart(document.getElementById('hourChart'), {
+        type: 'line',
+        data: hourData,
+        options: { /* ... */ }
+    });
+
+    new Chart(document.getElementById('tldChart'), {
+        type: 'pie',
+        data: tldData,
+        options: { /* ... */ }
+    });
+
+    new Chart(document.getElementById('lengthChart'), {
+        type: 'bar',
+        data: lengthData,
+        options: { /* ... */ }
+    });
+
+    WordCloud(document.getElementById('wordCloud'), { list: wordData });
+    </script>
+</body>
+</html>
