@@ -4,7 +4,6 @@ from tensorflow.keras.models import load_model
 import pandas as pd
 from database import db, URLStat
 from flask_admin import Admin
-from flaks import check
 from flask_admin.contrib.sqla import ModelView
 from collections import Counter
 from operator import itemgetter
@@ -37,11 +36,6 @@ def check_url():
         return jsonify({'message': 'Ignored URL'}), 200
 
     is_phishing = is_phishing_url(url)
-
-
-    # save the URL and its classification to the database
-    if check(url):
-        is_phishing = True
     url_stat = URLStat(url=url, is_phishing=1 if is_phishing else 0, ip_address=ip_address)
     db.session.add(url_stat)
     db.session.commit()

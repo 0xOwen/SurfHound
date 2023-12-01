@@ -1,2 +1,2 @@
-// Close the popup after 5 seconds (5000 milliseconds)
+// Close the popup after 5 seconds
 setTimeout(window.close, 5000)

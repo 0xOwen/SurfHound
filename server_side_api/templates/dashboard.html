@@ -2,6 +2,8 @@
 <html>
 <head>
     <title>Dashboard</title>
+    <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='favicon.ico')}}">
+    <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         body {
@@ -14,12 +16,34 @@
             background-color: #333;
             color: #fff;
             padding: 10px 0;
-            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        .header h1 {
+        .headings h1 {
             margin: 0;
             padding: 0;
+            padding-right: 138px;
+            font-family: 'Allura', cursive;
+            font-size: 48px;
         }
+        .headings h2{
+            margin-right:138px;
+        }
+        .header img {
+            width: 128px;
+            height: 128px;
+            margin-left: 10px;
+        }
+        .headings {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            text-align: center;
+        }
+
         .chart-container {
             width: 45%;
             height: 45%;
@@ -41,8 +65,11 @@
 </head>
 <body>
     <div class="header">
-        <h1>Surfhound</h1>
-        <h2>Admin Dashboard</h2>
+        <img src="{{url_for('static', filename='logo_128.png')}}" alt="Logo">
+        <div class="headings">
+            <h1>Surfhound</h1>
+            <h2>Admin Dashboard</h2>
+        </div>
     </div>
 
     <div class="charts">
