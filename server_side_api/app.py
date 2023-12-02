@@ -4,7 +4,6 @@ from tensorflow.keras.models import load_model
 import pandas as pd
 from database import db, URLStat
 from flask_admin import Admin
-from flaks import check
 from flask_admin.contrib.sqla import ModelView
 from collections import Counter
 from operator import itemgetter
@@ -40,8 +39,6 @@ def check_url():
 
 
     # save the URL and its classification to the database
-    if check(url):
-        is_phishing = True
     url_stat = URLStat(url=url, is_phishing=1 if is_phishing else 0, ip_address=ip_address)
     db.session.add(url_stat)
     db.session.commit()
@@ -53,7 +50,7 @@ def check_url():
 @app.route('/check_url_virustotal', methods=['POST'])
 def check_url_virustotal():
     url_to_check = request.json['url']
-    api_key = '0d4c79ccddfd5bc31772ee023c7fa70b9941d3cef2da2e79ea13f562b1e74a29'
+    api_key = ''
     api_endpoint = f"https://www.virustotal.com/api/v3/urls/{url_to_check}/analyse"
 
     headers = {

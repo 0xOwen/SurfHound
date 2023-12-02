@@ -1,181 +1,181 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Dashboard</title>
-    <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='favicon.ico')}}">
-    <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        .header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .headings h1 {
-            margin: 0;
-            padding: 0;
-            padding-right: 138px;
-            font-family: 'Allura', cursive;
-            font-size: 48px;
-        }
-        .headings h2{
-            margin-right:138px;
-        }
-        .header img {
-            width: 128px;
-            height: 128px;
-            margin-left: 10px;
-        }
-        .headings {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto;
-            text-align: center;
-        }
+    <head>
+        <title>Dashboard</title>
+        <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+        <link rel="icon" href="{{url_for('static',filename='favicon.ico')}}">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f4f4f4;
+            }
+            .header {
+                background-color: #333;
+                color: #fff;
+                padding: 10px 0;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .headings h1 {
+                margin: 0;
+                padding: 0;
+                padding-right: 138px;
+                font-family: 'Allura', cursive;
+                font-size: 48px;
+            }
+            .headings h2{
+                margin-right:138px;
+            }
+            .header img {
+                width: 128px;
+                height: 128px;
+                margin-left: 10px;
+            }
+            .headings {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto;
+                text-align: center;
+            }
 
-        .chart-container {
-            width: 45%;
-            height: 45%;
-            margin: 2.5%;
-            box-sizing: border-box;
-            border: 1px solid #333;
-            padding: 10px; 
-            background-color: #fff; 
-        }
-        .chart-container h2 {
-            text-align: center;
-        }
-        .charts {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-    </style>
-</head>
-<body>
-    <div class="header">
-        <img src="{{url_for('static', filename='logo_128.png')}}" alt="Logo">
-        <div class="headings">
-            <h1>Surfhound</h1>
-            <h2>Admin Dashboard</h2>
+            .chart-container {
+                width: 45%;
+                height: 45%;
+                margin: 2.5%;
+                box-sizing: border-box;
+                border: 1px solid #333;
+                padding: 10px; 
+                background-color: #fff; 
+            }
+            .chart-container h2 {
+                text-align: center;
+            }
+            .charts {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <img src="{{url_for('static', filename='logo_128.png')}}" alt="Logo">
+            <div class="headings">
+                <h1>Surfhound</h1>
+                <h2>Admin Dashboard</h2>
+            </div>
         </div>
-    </div>
 
-    <div class="charts">
-        <div class="chart-container">
-            <h2>URL Type Distribution</h2>
-            <canvas id="urlTypeChart" ></canvas>
+        <div class="charts">
+            <div class="chart-container">
+                <h2>URL Type Distribution</h2>
+                <canvas id="urlTypeChart" ></canvas>
+            </div>
+            <div class="chart-container">
+                <h2>IP Distribution</h2>
+                <canvas id="ipChart" ></canvas>
+            </div>
+            <div class="chart-container">
+                <h2>Time Distribution</h2>
+                <canvas id="timeChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <h2>URL Distribution</h2>
+                <canvas id="urlChart" ></canvas>
+            </div>
+            <div class="chart-container">
+                <h2>Hour Distribution</h2>
+                <canvas id="hourChart" ></canvas>
+            </div>
+            <div class="chart-container">
+                <h2>TLD Distribution</h2>
+                <canvas id="tldChart" ></canvas>
+            </div>
+            <div class="chart-container">
+                <h2>Length Distribution</h2>
+                <canvas id="lengthChart"></canvas>
+            </div>
         </div>
-        <div class="chart-container">
-            <h2>IP Distribution</h2>
-            <canvas id="ipChart" ></canvas>
-        </div>
-        <div class="chart-container">
-            <h2>Time Distribution</h2>
-            <canvas id="timeChart"></canvas>
-        </div>
-        <div class="chart-container">
-            <h2>URL Distribution</h2>
-            <canvas id="urlChart" ></canvas>
-        </div>
-        <div class="chart-container">
-            <h2>Hour Distribution</h2>
-            <canvas id="hourChart" ></canvas>
-        </div>
-        <div class="chart-container">
-            <h2>TLD Distribution</h2>
-            <canvas id="tldChart" ></canvas>
-        </div>
-        <div class="chart-container">
-            <h2>Length Distribution</h2>
-            <canvas id="lengthChart"></canvas>
-        </div>
-    </div>
 
-    <script>
-    var urlTypeData = {{ data[0]|tojson }};
-    var ipData = {{ data[1]|tojson }};
-    var timeData = {{ data[2]|tojson }};
-    var urlData = {{ data[3]|tojson }};
-    var hourData = {{ data[4]|tojson }};
-    var tldData = {{ data[5]|tojson }};
-    var lengthData = {{ data[6]|tojson }};
+        <script>
+        var urlTypeData = {{ data[0]|tojson }};
+        var ipData = {{ data[1]|tojson }};
+        var timeData = {{ data[2]|tojson }};
+        var urlData = {{ data[3]|tojson }};
+        var hourData = {{ data[4]|tojson }};
+        var tldData = {{ data[5]|tojson }};
+        var lengthData = {{ data[6]|tojson }};
 
-    new Chart(document.getElementById('urlTypeChart'), {
-        type: 'bar',
-        data: urlTypeData,
-        options: { 
-            responsive: true,
-            title: { display: true, text: 'URL Type Distribution' } 
-        }
-    });
+        new Chart(document.getElementById('urlTypeChart'), {
+            type: 'bar',
+            data: urlTypeData,
+            options: { 
+                responsive: true,
+                title: { display: true, text: 'URL Type Distribution' } 
+            }
+        });
 
-    new Chart(document.getElementById('ipChart'), {
-        type: 'pie',
-        data: ipData,
-        options: { 
-            responsive: true,
-            aspectRatio: 2,
-            title: { display: true, text: 'IP Distribution' } 
-        }
-    });
+        new Chart(document.getElementById('ipChart'), {
+            type: 'pie',
+            data: ipData,
+            options: { 
+                responsive: true,
+                aspectRatio: 2,
+                title: { display: true, text: 'IP Distribution' } 
+            }
+        });
 
-    new Chart(document.getElementById('timeChart'), {
-        type: 'line',
-        data: timeData,
-        options: { 
-            responsive: true,
-            title: { display: true, text: 'Time Distribution' } 
-        }
-    });
+        new Chart(document.getElementById('timeChart'), {
+            type: 'line',
+            data: timeData,
+            options: { 
+                responsive: true,
+                title: { display: true, text: 'Time Distribution' } 
+            }
+        });
 
-    new Chart(document.getElementById('urlChart'), {
-        type: 'bar',
-        data: urlData,
-        options: { 
-            responsive: true,
-            title: { display: true, text: 'URL Distribution' } 
-        }
-    });
+        new Chart(document.getElementById('urlChart'), {
+            type: 'bar',
+            data: urlData,
+            options: { 
+                responsive: true,
+                title: { display: true, text: 'URL Distribution' } 
+            }
+        });
 
-    new Chart(document.getElementById('hourChart'), {
-        type: 'line',
-        data: hourData,
-        options: { 
-            responsive: true,
-            title: { display: true, text: 'Hour Distribution' } 
-        }
-    });
+        new Chart(document.getElementById('hourChart'), {
+            type: 'line',
+            data: hourData,
+            options: { 
+                responsive: true,
+                title: { display: true, text: 'Hour Distribution' } 
+            }
+        });
 
-    new Chart(document.getElementById('tldChart'), {
-        type: 'pie',
-        data: tldData,
-        options: { 
-            responsive: true,
-            aspectRatio: 2,
-            title: { display: true, text: 'TLD Distribution' } 
-        }
-    });
+        new Chart(document.getElementById('tldChart'), {
+            type: 'pie',
+            data: tldData,
+            options: { 
+                responsive: true,
+                aspectRatio: 2,
+                title: { display: true, text: 'TLD Distribution' } 
+            }
+        });
 
-    new Chart(document.getElementById('lengthChart'), {
-        type: 'bar',
-        data: lengthData,
-        options: { 
-            responsive: true,
-            title: { display: true, text: 'Length Distribution' } 
-        }
-    });
-    </script>
-</body>
+        new Chart(document.getElementById('lengthChart'), {
+            type: 'bar',
+            data: lengthData,
+            options: { 
+                responsive: true,
+                title: { display: true, text: 'Length Distribution' } 
+            }
+        });
+        </script>
+    </body>
 </html>

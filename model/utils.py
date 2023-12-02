@@ -63,16 +63,11 @@ class Preprocessor:
         df['num_digits'] = df['url'].apply(lambda x: sum(c.isdigit() for c in x))
         df['num_letters'] = df['url'].apply(lambda x: sum(c.isalpha() for c in x))
         df['num_special_chars'] = df['url'].apply(lambda x: len(re.findall('[^a-zA-Z0-9]', x)))
-        df['num_dots'] = df['url'].apply(lambda x: x.count('.'))
-        df['num_slashes'] = df['url'].apply(lambda x: x.count('/'))
         df['num_hyphens'] = df['url'].apply(lambda x: x.count('-'))
-
-        # Additional features
         df['num_subdomains'] = df['url'].apply(lambda x: x.count('.'))
         df['has_https'] = df['url'].apply(lambda x: 1 if x.startswith('https://') else 0)
         df['tld_length'] = df['url'].apply(lambda x: len(tldextract.extract(x).suffix) if '.' in x else 0)
         df['has_ip'] = df['url'].apply(lambda x: 1 if re.match(r"\b(?:\d{1,3}\.){3}\d{1,3}\b", x) else 0)
-        df['has_redirects'] = df['url'].apply(lambda x: 1 if '//' in x else 0)
 
         return np.array(df.drop(columns=['url', 'label']))
 
