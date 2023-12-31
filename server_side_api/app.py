@@ -19,6 +19,7 @@ model = load_model('surfhound.h5')
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
+app.secret_key = 'foobar'
 db.init_app(app)
 admin = Admin(app, template_mode='bootstrap3')
 admin.add_view(ModelView(URLStat, db.session))
