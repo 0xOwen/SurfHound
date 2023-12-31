@@ -6,3 +6,5 @@ package-lock.json
 __pycache__
 *.pkl
 /server_side_api/instance/
+/server_side_api/preprocessor.pkl
+datasets/phishing_urls.csv
