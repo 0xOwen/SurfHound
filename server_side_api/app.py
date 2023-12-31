@@ -26,6 +26,7 @@ admin.add_view(ModelView(URLStat, db.session))
 with app.app_context():
     db.create_all()
 
+# endpoint for checking URLs against the ML model
 @app.route('/api/check_url', methods=['POST'])
 def check_url():
     url = request.json.get('url')
@@ -50,6 +51,7 @@ def check_url():
 @app.route('/check_url_virustotal', methods=['POST'])
 def check_url_virustotal():
     url_to_check = request.json['url']
+    # Replace this with your virustotal API key
     api_key = ''
     api_endpoint = f"https://www.virustotal.com/api/v3/urls/{url_to_check}/analyse"
 
